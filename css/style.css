@@ -193,7 +193,7 @@ body {
   color: #55c57a;
   display: inline-block;
   text-decoration: none;
-  border-block-end: 1px solid currentColor;
+  border-block-end: 1px solid #55c57a;
   padding: 3px;
   transition: color 200ms, box-shadow 250ms, transform 200ms, border-radius 200ms; }
 
@@ -344,6 +344,60 @@ body {
     font-size: 6rem;
     font-weight: 100; }
 
+.story {
+  inline-size: 75%;
+  margin-inline: auto;
+  padding: 6rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  transform: skewX(-12deg); }
+  .story:not(:last-child) {
+    margin-block-end: 6rem; }
+  .story > * {
+    transform: skewX(12deg); }
+  .story__shape {
+    inline-size: 15rem;
+    block-size: 15rem;
+    margin-inline-end: 2rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50%);
+    clip-path: circle(50%); }
+  .story__img {
+    block-size: 100%;
+    transition: filter 300ms, transform 300ms;
+    transform: scale(1.4); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 200ms, transform 300ms;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    filter: blur(5px) brightness(80%);
+    transform: scale(1); }
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  z-index: -1; }
+  .bg-video__content {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover; }
+
 .section-about {
   background-color: #f7f7f7;
   padding-block: 25rem;
@@ -363,3 +417,8 @@ body {
   padding-block-start: 20rem;
   padding-block-end: 12rem;
   background-color: #f7f7f7; }
+
+.section-stories {
+  padding-block: 15rem;
+  position: relative;
+  isolation: isolate; }
