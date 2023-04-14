@@ -1,0 +1,58 @@
+.story {
+	inline-size: 75%;
+	margin-inline: auto;
+	padding: 6rem;
+	background-color: rgba($color-white, 0.85);
+	box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+	border-radius: 3px;
+	transform: skewX(-12deg);
+
+	&:not(:last-child) {
+		margin-block-end: 6rem;
+	}
+
+	& > * {
+		transform: skewX(12deg);
+	}
+
+	&__shape {
+		inline-size: 15rem;
+		block-size: 15rem;
+		margin-inline-end: 2rem;
+		float: left;
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+		-webkit-clip-path: circle(50%);
+		clip-path: circle(50%);
+	}
+
+	&__img {
+		block-size: 100%;
+		transition: filter 300ms, transform 300ms;
+		transform: scale(1.4);
+	}
+
+	&__caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 20%);
+		color: $color-white;
+		text-transform: uppercase;
+		text-align: center;
+		text-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.85);
+		opacity: 0;
+		transition: opacity 200ms, transform 300ms;
+		backface-visibility: hidden;
+	}
+
+	&:hover &__caption {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+
+	&:hover &__img {
+		filter: blur(5px) brightness(80%);
+		transform: scale(1);
+	}
+}

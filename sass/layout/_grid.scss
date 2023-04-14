@@ -1,48 +1,48 @@
 .row {
-    max-inline-size: $grid-max-width;
-    margin-inline: auto;
+	max-inline-size: $grid-max-width;
+	margin-inline: auto;
 
-    @include clearfix;
+	@include clearfix;
 
-    &:not(:last-child) {
-        margin-block-end: $grid-gutter-vertical;
-    }
+	&:not(:last-child) {
+		margin-block-end: $grid-gutter-vertical;
+	}
 
-    [class^='col-'] {
-        float: left;
+	[class^="col-"] {
+		float: left;
 
-        &:not(:last-child) {
-            margin-inline-end: $grid-gutter-horizontal;
-        }
-    }
+		&:not(:last-child) {
+			margin-inline-end: $grid-gutter-horizontal;
+		}
+	}
 
-    .col-1-of-2 {
-        inline-size: calc((100% - #{$grid-gutter-horizontal}) / 2);
-    }
+	.col-1-of-2 {
+		inline-size: calc((100% - #{$grid-gutter-horizontal}) / 2);
+	}
 
-    .col-1-of-3 {
-        inline-size: calc((100% - 2 * #{$grid-gutter-horizontal}) / 3);
-    }
+	.col-1-of-3 {
+		inline-size: calc((100% - 2 * #{$grid-gutter-horizontal}) / 3);
+	}
 
-    .col-1-of-4 {
-        inline-size: calc((100% - 3 * #{$grid-gutter-horizontal}) / 4);
-    }
+	.col-1-of-4 {
+		inline-size: calc((100% - 3 * #{$grid-gutter-horizontal}) / 4);
+	}
 
-    .col-2-of-3 {
-        inline-size: calc(
-            2 * ((100% - 2 * #{$grid-gutter-horizontal}) / 3) + #{$grid-gutter-horizontal}
-        );
-    }
+	.col-2-of-3 {
+		inline-size: calc(
+			2 * ((100% - 2 * #{$grid-gutter-horizontal}) / 3) + #{$grid-gutter-horizontal}
+		);
+	}
 
-    .col-2-of-4 {
-        inline-size: calc(
-            2 * ((100% - 3 * #{$grid-gutter-horizontal}) / 4) + #{$grid-gutter-horizontal}
-        );
-    }
+	.col-2-of-4 {
+		inline-size: calc(
+			2 * ((100% - 3 * #{$grid-gutter-horizontal}) / 4) + #{$grid-gutter-horizontal}
+		);
+	}
 
-    .col-3-of-4 {
-        inline-size: calc(
-            3 * ((100% - 3 * #{$grid-gutter-horizontal}) / 4) + 2 * #{$grid-gutter-horizontal}
-        );
-    }
+	.col-3-of-4 {
+		inline-size: calc(
+			3 * ((100% - 3 * #{$grid-gutter-horizontal}) / 4) + 2 * #{$grid-gutter-horizontal}
+		);
+	}
 }
