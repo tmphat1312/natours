@@ -87,16 +87,16 @@ body {
   margin-block-end: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-block-end: 8rem; }
+  margin-block-end: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-block-end: 4rem; }
+  margin-block-end: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-block-end: 1.6rem; }
+  margin-block-end: 1.6rem !important; }
 
 .header {
   block-size: 95vh;
@@ -126,9 +126,9 @@ body {
     clear: both; }
   .row:not(:last-child) {
     margin-block-end: 8rem; }
-  .row [class^='col-'] {
+  .row [class^="col-"] {
     float: left; }
-    .row [class^='col-']:not(:last-child) {
+    .row [class^="col-"]:not(:last-child) {
       margin-inline-end: 6rem; }
   .row .col-1-of-2 {
     inline-size: calc((100% - 6rem) / 2); }
@@ -143,7 +143,11 @@ body {
   .row .col-3-of-4 {
     inline-size: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
-.btn:link, .btn:visited {
+.btn[type="submit"] {
+  border: none;
+  font-size: inherit; }
+
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -151,9 +155,10 @@ body {
   border-radius: 10rem;
   transition: translate 400ms, transform 400ms, box-shadow 200ms;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
-.btn:active {
+.btn:active, .btn:focus {
   translate: 0 -0.1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -398,6 +403,71 @@ body {
     inline-size: 100%;
     object-fit: cover; }
 
+.form {
+  font-size: 1.5rem; }
+  .form [class^="label"] {
+    cursor: pointer; }
+  .form__group:not(:last-child) {
+    margin-block-end: 2rem; }
+  .form__input {
+    inline-size: 90%;
+    display: block;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-style: none;
+    border-block-end: 3px solid transparent;
+    transition: box-shadow 200ms, border-color 200ms; }
+    .form__input:focus {
+      outline-style: none;
+      box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-block-end: 3px solid #55c57a; }
+    .form__input:focus:invalid {
+      border-block-end: 3px solid #ff7730; }
+    .form__input::placeholder {
+      color: #999; }
+  .form__label {
+    display: block;
+    font-size: inherit;
+    font-weight: 700;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    transition: opacity 300ms, transform 200ms;
+    transform: none; }
+  .form__input:placeholder-shown ~ .form__label {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4rem); }
+  .form__radio-group {
+    inline-size: 49%;
+    display: inline-block; }
+  .form__radio-label {
+    font-size: inherit; }
+  .form__radio-button {
+    color: #55c57a;
+    font-size: 2rem;
+    display: inline-block;
+    box-sizing: content-box;
+    block-size: 1em;
+    aspect-ratio: 1;
+    margin-inline-end: 0.8rem;
+    border: 0.2em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(30%); }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1;
+      background-color: currentColor;
+      border-radius: 50%;
+      border: 0.15em solid #fff;
+      opacity: 0; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
+
 .section-about {
   background-color: #f7f7f7;
   padding-block: 25rem;
@@ -422,3 +492,15 @@ body {
   padding-block: 15rem;
   position: relative;
   isolation: isolate; }
+
+.section-book {
+  padding-block: 15rem;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  .section-book .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 1.5rem 1rem 1rem rgba(0, 0, 0, 0.25); }
+    .section-book .book__form {
+      inline-size: 50%;
+      padding: 6rem; }
