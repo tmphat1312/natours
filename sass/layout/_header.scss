@@ -23,9 +23,7 @@
 	}
 
 	&__text-box {
-		position: absolute;
-		inset: 50% 0 0 50%;
-		transform: translate(-50%, -50%);
+		@include center-2d;
 		text-align: center;
 	}
 }
