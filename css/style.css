@@ -154,7 +154,8 @@ body {
     margin-block-end: 6rem; }
   .footer__logo {
     width: 15rem;
-    height: auto; }
+    height: auto;
+    display: inline-block; }
   .footer__navigation {
     display: inline-block;
     border-block-start: 1px solid #f7f7f7;
