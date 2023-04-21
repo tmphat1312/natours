@@ -3,6 +3,11 @@
 	padding-block: 10rem;
 	color: $color-grey-light-1;
 
+	padding-inline: 0.8rem;
+	@include respond(tab-port) {
+		padding-block: 6rem;
+	}
+
 	&__logo-box {
 		text-align: center;
 		margin-block-end: 6rem;
@@ -18,6 +23,12 @@
 		display: inline-block;
 		border-block-start: 1px solid $color-grey-light-1;
 		padding-block: 1.2rem;
+
+		@include respond(tab-port) {
+			padding-inline: 2rem;
+			inline-size: 100%;
+			text-align: center;
+		}
 	}
 
 	&__item {
@@ -52,5 +63,10 @@
 		display: inline-block;
 		border-block-start: 1px solid $color-grey-light-1;
 		padding-block: 1.2rem;
+
+		@include respond(tab-port) {
+			inline-size: 100%;
+			text-align: center;
+		}
 	}
 }

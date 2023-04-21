@@ -1,64 +1,81 @@
 body {
-    font-family: 'Lato', sans-serif;
-    font-weight: $default-font-weight;
-    font-size: $default-font-size;
-    line-height: 1.7;
-    color: $color-grey-dark;
-    padding: 3rem;
+	font-family: "Lato", sans-serif;
+	font-weight: $default-font-weight;
+	font-size: $default-font-size;
+	line-height: 1.7;
+	color: $color-grey-dark;
 }
 
-[class^='heading-'] {
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
+[class^="heading-"] {
+	text-transform: uppercase;
+	font-weight: $font-weight-bold;
 }
 
 .heading-primary {
-    color: $color-white;
-    backface-visibility: hidden;
-    margin-block-end: 6rem;
+	color: $color-white;
+	backface-visibility: hidden;
+	margin-block-end: 6rem;
 
-    &--main {
-        display: block;
-        font-size: 6rem;
-        letter-spacing: 3.5rem;
-        animation: moveInLeft 1000ms;
-    }
+	&--main {
+		display: block;
+		font-size: 6rem;
+		letter-spacing: 3.5rem;
+		animation: moveInLeft 1000ms;
 
-    &--sub {
-        display: block;
-        font-weight: $default-font-weight;
-        font-size: 2rem;
-        letter-spacing: 1.2rem;
-        animation: moveInRight 1000ms;
-    }
+		@include respond(phone) {
+			letter-spacing: 1.6rem;
+			font-size: 4.8rem;
+		}
+	}
+
+	&--sub {
+		display: block;
+		font-weight: $default-font-weight;
+		font-size: 2rem;
+		letter-spacing: 1.2rem;
+		animation: moveInRight 1000ms;
+
+		@include respond(phone) {
+			letter-spacing: 0.8rem;
+			font-size: 1.2rem;
+		}
+	}
 }
 
 .heading-secondary {
-    letter-spacing: 2px;
-    font-size: 3.5rem;
-    display: inline-block;
-    background-image: linear-gradient(
-        to right,
-        $color-primary-light,
-        $color-primary-dark
-    );
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    transition: transform 200ms;
+	letter-spacing: 2px;
+	font-size: 3.6rem;
+	display: inline-block;
+	background-image: linear-gradient(
+		to right,
+		$color-primary-light,
+		$color-primary-dark
+	);
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	transition: transform 200ms;
 
-    &:hover {
-        transform: skewY(2deg) skewX(5deg) scale(1.1);
-        text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
-    }
+	@include respond(tab-port) {
+		font-size: 2.8rem;
+	}
+
+	@include respond(phone) {
+		font-size: 2.4rem;
+		padding: 1.2rem;
+	}
+	&:hover {
+		transform: skewY(2deg) skewX(5deg) scale(1.1);
+		text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+	}
 }
 
 .heading-tertiary {
-    font-size: inherit;
+	font-size: inherit;
 }
 
 .paragraph {
-    &:not(:last-child) {
-        margin-block-end: 3rem;
-    }
+	&:not(:last-child) {
+		margin-block-end: 3rem;
+	}
 }

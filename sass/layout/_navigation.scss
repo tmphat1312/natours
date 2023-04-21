@@ -13,6 +13,12 @@
 		box-shadow: 0 1rem 3rem rgba($color-black, 0.15);
 		cursor: pointer;
 		text-align: center;
+
+		@include respond(tab-port) {
+			$offset: 2.4rem;
+			top: $offset;
+			right: $offset;
+		}
 	}
 
 	&__bg {
@@ -31,6 +37,12 @@
 		z-index: 1;
 
 		transition: transform 600ms ease-out;
+
+		@include respond(tab-port) {
+			$offset: 2.6rem;
+			top: $offset;
+			right: $offset;
+		}
 	}
 
 	&__nav {
@@ -70,6 +82,11 @@
 			);
 			background-size: 220%;
 			transition: background 500ms, color 200ms, transform 400ms;
+
+			@include respond(phone) {
+				font-size: 2rem;
+				transition: unset;
+			}
 		}
 
 		&:hover,

@@ -46,6 +46,10 @@
 		opacity: 0;
 		scale: 0.5;
 		transition: scale 400ms, opacity 400ms;
+
+		@include respond(tab-port) {
+			padding: 6rem 2.4rem 1.6rem;
+		}
 	}
 
 	&:target &__content {
@@ -56,6 +60,12 @@
 	&__left-side {
 		inline-size: calc(100% / 3);
 		display: table-cell;
+
+		@include respond(tab-port) {
+			display: inline-block;
+			inline-size: 94%;
+			text-align: center;
+		}
 	}
 
 	&__right-side {
@@ -63,11 +73,23 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 3rem 5rem;
+
+		@include respond(tab-port) {
+			display: block;
+			inline-size: auto;
+			padding-inline: unset;
+			text-align: center;
+		}
 	}
 
 	&__img {
 		display: block;
 		width: 100%;
+
+		@include respond(tab-port) {
+			display: inline-block;
+			inline-size: 49.5%;
+		}
 	}
 
 	&__text {
@@ -79,5 +101,13 @@
 		column-rule: 1px solid $color-grey-light-2;
 
 		hyphens: auto;
+
+		@include respond(tab-port) {
+			text-align: start;
+		}
+
+		@include respond(phone) {
+			columns: unset;
+		}
 	}
 }

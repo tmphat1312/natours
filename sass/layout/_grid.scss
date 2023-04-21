@@ -1,11 +1,18 @@
 .row {
 	max-inline-size: $grid-max-width;
 	margin-inline: auto;
+	@include respond(tab-port) {
+		max-inline-size: Min(94vw, $grid-max-width-small);
+		padding-inline: 1.2rem;
+	}
 
 	@include clearfix;
 
 	&:not(:last-child) {
 		margin-block-end: $grid-gutter-vertical;
+		@include respond(tab-port) {
+			margin-block-end: $grid-gutter-vertical-small;
+		}
 	}
 
 	[class^="col-"] {
@@ -13,6 +20,14 @@
 
 		&:not(:last-child) {
 			margin-inline-end: $grid-gutter-horizontal;
+			@include respond(tab-port) {
+				margin-inline-end: 0;
+				margin-block-end: $grid-gutter-vertical-small;
+			}
+		}
+
+		@include respond(tab-port) {
+			inline-size: 100% !important;
 		}
 	}
 

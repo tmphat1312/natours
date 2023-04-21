@@ -24,8 +24,10 @@ $default-font-weight: 400;
 $font-weight-bold: 700;
 
 // GRIDS
-$grid-max-width: 114rem;
+$grid-max-width: 114rem !default;
+$grid-max-width-small: 60rem !default;
 $grid-gutter-vertical: 8rem;
+$grid-gutter-vertical-small: 8rem !default;
 $grid-gutter-horizontal: 6rem;
 
 // ANIMATIONS
