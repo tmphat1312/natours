@@ -180,7 +180,7 @@
 		font-weight: 100;
 	}
 
-	@include respond(tab-port) {
+	@media only screen and (max-width: 56.25em), only screen and (hover: none) {
 		max-inline-size: 50rem;
 		margin-inline: auto;
 
