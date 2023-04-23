@@ -1,14 +1,15 @@
 {
-    "name": "natours",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "compile:sass": "node-sass sass/main.scss css/style.css -w"
-    },
-    "author": "Minh Phat",
-    "license": "MIT",
-    "devDependencies": {
-        "node-sass": "^8.0.0"
-    }
+	"name": "natours",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile:sass": "node-sass sass/main.scss css/style.comp.css - w"
+	},
+	"author": "Minh Phat",
+	"license": "MIT",
+	"devDependencies": {
+		"concat": "^1.0.3",
+		"node-sass": "^8.0.0"
+	}
 }

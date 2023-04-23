@@ -234,12 +234,15 @@ body {
 
 .header {
   block-size: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
@@ -421,6 +424,7 @@ body {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 5;
   visibility: hidden;
@@ -572,7 +576,8 @@ body {
   box-shadow: unset; }
 
 .composition {
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .composition__photo {
     display: inline-block;
     width: 55%;
@@ -585,14 +590,11 @@ body {
     @media (max-width: 56.25em) {
       .composition__photo {
         position: relative;
-        width: calc(100% / 3);
+        width: 30%;
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       inset-inline-start: 0;
       inset-block-start: 0; }
-      @media (max-width: 56.25em) {
-        .composition__photo--p1 {
-          inset: unset; } }
     .composition__photo--p2 {
       inset-inline-end: 0;
       inset-block-start: 4rem; }
@@ -615,9 +617,18 @@ body {
       @media (max-width: 56.25em) {
         .composition__photo:hover {
           outline: unset;
-          transform: scale(1.35); } }
-  .composition:hover .composition__photo:not(:hover) {
+          transform: none; } }
+    @media (max-width: 56.25em) {
+      .composition__photo--p2:hover {
+        transform: scale(1.3) translateY(-3.2rem); } }
+  .composition:hover .composition__photo:not(:hover) .composition:hover .composition__photo:not(:hover)__photo:not(:hover) {
     transform: scale(0.95); }
+    @media (max-width: 56.25em) {
+      .composition:hover .composition__photo:not(:hover) .composition:hover .composition__photo:not(:hover)__photo:not(:hover) {
+        transform: unset; } }
+  @media (max-width: 56.25em) {
+    .composition:hover .composition__photo:not(:hover) .composition:hover .composition__photo:not(:hover)__photo--p2:not(:hover) {
+      transform: scale(1.3) translateY(-3.2rem); } }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
@@ -912,9 +923,12 @@ body {
 .section-features {
   margin-block-start: -9.2rem;
   padding-block: 20rem;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4-small.jpg);
   background-size: cover;
   transform: skewY(-7deg); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .section-features {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg); } }
   .section-features > * {
     transform: skewY(7deg); }
   @media (max-width: 56.25em) {
@@ -942,10 +956,13 @@ body {
     .section-book {
       padding-block: 8rem; } }
   .section-book .book {
-    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10-small.jpg);
     background-size: cover;
     border-radius: 3px;
     box-shadow: 1.5rem 1rem 1rem rgba(0, 0, 0, 0.25); }
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+      .section-book .book {
+        background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-10.jpg); } }
     @media (max-width: 75em) {
       .section-book .book {
         background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 75%, transparent 75%), url(../img/nat-10.jpg);
