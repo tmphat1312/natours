@@ -12,13 +12,27 @@
 			rgba($color-primary-light, 0.8),
 			rgba($color-primary-dark, 0.8)
 		),
-		url(../img/nat-4.jpg);
+		url(../img/nat-4-small.jpg);
 	background-size: cover;
+
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+		(min-width: 125em) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary-light, 0.8),
+				rgba($color-primary-dark, 0.8)
+			),
+			url(../img/nat-4.jpg);
+	}
 
 	transform: skewY(-7deg);
 
 	& > * {
 		transform: skewY(7deg);
+	}
+
+	@include respond(tab-port) {
+		padding: 8rem;
 	}
 }
 
@@ -34,4 +48,78 @@
 	padding-block: 15rem;
 	position: relative;
 	isolation: isolate;
+
+	@include respond(tab-port) {
+		padding: 8rem;
+	}
+}
+
+.section-book {
+	padding-block: 15rem;
+	background-image: linear-gradient(
+		to right bottom,
+		$color-primary-light,
+		$color-primary-dark
+	);
+
+	@include respond(tab-port) {
+		padding-block: 8rem;
+	}
+
+	.book {
+		background-image: linear-gradient(
+				105deg,
+				rgba($color-white, 0.9) 0%,
+				rgba($color-white, 0.9) 50%,
+				transparent 50%
+			),
+			url(../img/nat-10-small.jpg);
+		background-size: cover;
+		border-radius: 3px;
+		box-shadow: 1.5rem 1rem 1rem rgba($color-black, 0.25);
+
+		@media (min-resolution: 192dpi) and (min-width: 37.5em),
+			(min-width: 125em) {
+			background-image: linear-gradient(
+					to right bottom,
+					rgba($color-primary-light, 0.8),
+					rgba($color-primary-dark, 0.8)
+				),
+				url(../img/nat-10.jpg);
+		}
+
+		@include respond(tab-land) {
+			background-image: linear-gradient(
+					105deg,
+					rgba($color-white, 0.9) 0%,
+					rgba($color-white, 0.9) 75%,
+					transparent 75%
+				),
+				url(../img/nat-10.jpg);
+
+			margin-inline: 1.2rem;
+		}
+
+		@include respond(tab-port) {
+			background-image: linear-gradient(
+					105deg,
+					rgba($color-white, 0.9) 0%,
+					rgba($color-white, 0.9)
+				),
+				url(../img/nat-10.jpg);
+		}
+
+		&__form {
+			inline-size: 50%;
+			padding: 6rem;
+
+			@include respond(tab-land) {
+				inline-size: 70%;
+			}
+
+			@include respond(tab-port) {
+				inline-size: 100%;
+			}
+		}
+	}
 }

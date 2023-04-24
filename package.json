@@ -1,14 +1,28 @@
 {
-    "name": "natours",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "compile:sass": "node-sass sass/main.scss css/style.css -w"
-    },
-    "author": "Minh Phat",
-    "license": "MIT",
-    "devDependencies": {
-        "node-sass": "^8.0.0"
-    }
+	"name": "natours",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss css/style.css -w",
+		"task-live-server": "live-server --port=8080 --browser=chrome --verbose --ignore=node_modules --watch=index.html,css/*.css --no-css-inject",
+		"start:css-dev": "npm-run-all --parallel watch:sass task-live-server",
+		"start": "npm-run-all start:css-dev",
+		"compile:sass": "node-sass sass/main.scss css/style.comp.css",
+		"concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+		"compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+		"build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
+		"build": "npm-run-all build:css"
+	},
+	"author": "Minh Phat",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "^10.4.14",
+		"concat": "^1.0.3",
+		"live-server": "^1.2.2",
+		"node-sass": "^8.0.0",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^10.1.0"
+	}
 }

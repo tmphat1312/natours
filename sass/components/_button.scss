@@ -1,4 +1,10 @@
 .btn {
+	&[type="submit"] {
+		border: none;
+		font-size: inherit;
+	}
+
+	&,
 	&:link,
 	&:visited {
 		text-transform: uppercase;
@@ -9,9 +15,11 @@
 		transition: translate 400ms, transform 400ms, box-shadow 200ms;
 		box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
 		position: relative;
+		cursor: pointer;
 	}
 
-	&:active {
+	&:active,
+	&:focus {
 		translate: 0 -0.1rem;
 		box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
 	}

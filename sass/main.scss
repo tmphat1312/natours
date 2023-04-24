@@ -2,13 +2,17 @@
 @import "abstracts/mixins";
 @import "abstracts/functions";
 
+@import "base/reset";
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
-@import "layout/header";
 @import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/navigation";
+@import "layout/popup";
 
 @import "components/button";
 @import "components/composition";
@@ -16,5 +20,6 @@
 @import "components/card";
 @import "components/story";
 @import "components/bg-video";
+@import "components/form";
 
 @import "pages/home";
